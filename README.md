@@ -1,3 +1,7 @@
+<img width="40%" alt="image" src="https://github.com/user-attachments/assets/d55361d0-e0f5-47bb-a8cf-3b2e14dbb22e" />
+
+## Quiz 1: Java Basics
+
 ### Due: 06/26/2025, midnight
 
 ### Todo
