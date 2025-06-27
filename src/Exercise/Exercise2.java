@@ -1,19 +1,36 @@
 package Exercise;
 
 public class Exercise2 {
+
     public static void main(String[] args) {
-        exercise2();
+        runPowerCheck();  // Quick trigger for the test cases
     }
 
-    private static void exercise2() {
-        /*
-        Task: check whether each of a list of integer is power of 2
-        Input: a list of integers
-        Output: true or false
-        Logic: return TRUE if a given number is a power of 2, such as 2, 4, 8, and return FALSE otherwise
-        Validation: test your function up to at least 128   // What is testing? see https://youtu.be/u6QfIXgjwGQ?si=6_QCuitJwU1G6pjL
-        Additional improvement: make your code run as fast as possible
-         */
-        //TODO: add your code
+    private static void runPowerCheck() {
+        // A bunch of numbers to see if they're powers of two
+        int[] numsToTest = {1, 2, 3, 4, 8, 15, 16, 31, 32, 64, 127, 128, 129};
+
+        // Going through each number one by one
+        for (int number : numsToTest) {
+            boolean check = checkPowerOfTwo(number);
+            System.out.printf("Is %d a power of 2? %s\n", number, check);
+        }
+
+        // Maybe add edge cases later, like negative numbers or zero
+    }
+
+    // Checks if a number is a power of 2 using a bitwise trick
+    // Note: this still trips me up sometimes
+    private static boolean checkPowerOfTwo(int num) {
+        if (num <= 0) {
+            return false;  // zero and negatives aren't powers of two
+        }
+
+        // The classic bitwise trick — surprisingly efficient
+        return (num & (num - 1)) == 0;
+
+        // Alternate (less efficient) way, just for kicks:
+        // while (num % 2 == 0) num /= 2;
+        // return num == 1;
     }
 }
